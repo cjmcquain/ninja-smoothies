@@ -16,7 +16,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navbar",
+  data() {
+    return {};
+  }
+};
 </script>
 
 <style>
