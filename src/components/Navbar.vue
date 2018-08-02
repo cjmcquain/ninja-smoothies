@@ -25,4 +25,7 @@ export default {
 </script>
 
 <style>
+.navbar nav {
+  padding: 0 20px;
+}
 </style>
