@@ -45,10 +45,19 @@ export default {
           remove: /[$*_+~.()'"!\-:@]/g,
           lower: true
         });
-        db.collection("smoothies").add({
-          title: this.title,
-          ingredients: this.ingredients
-        });
+        db
+          .collection("smoothies")
+          .add({
+            title: this.title,
+            ingredients: this.ingredients,
+            slug: this.slug
+          })
+          .then(() => {
+            this.$router.push({ name: "Index" });
+          })
+          .catch(err => {
+            console.log(err);
+          });
       } else {
         this.feedback = "You must enter a smoothie title";
       }
