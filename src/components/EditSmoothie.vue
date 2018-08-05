@@ -44,6 +44,24 @@ export default {
         this.smoothie.id = doc.id;
       });
     });
+  },
+  methods: {
+    addIng() {
+      if (this.another) {
+        this.smoothie.ingredients.push(this.another);
+        this.another = null;
+        this.feedback = null;
+      } else {
+        this.feedback = "You must enter a value to add an ingredient";
+      }
+    },
+    deleteIng(ing) {
+      this.smoothie.ingredients = this.smoothie.ingredients.filter(
+        ingredient => {
+          return ingredient != ing;
+        }
+      );
+    }
   }
 };
 </script>
